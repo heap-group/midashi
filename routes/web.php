@@ -12,7 +12,7 @@
 */
 
 // サイト
-Route::get('/', 'PageController@index')->middleware('auth');
+Route::get('/', 'PageController@index');
 
 // 認証が必要なページ
 Route::group(['prefix' => 'post', 'middleware' => 'auth'], function () {
