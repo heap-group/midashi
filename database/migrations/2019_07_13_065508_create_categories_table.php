@@ -22,7 +22,7 @@ class CreateCategoriesTable extends Migration
             $table->integer('category_create_user')
                 ->unsigned();
             // 外部キー指定
-            $table->foreign('post_create_user')
+            $table->foreign('category_create_user')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
