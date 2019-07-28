@@ -12,7 +12,8 @@
 */
 
 // サイト
-Route::get('/', 'PageController@index');
+Route::get('/', 'PageController@index')
+    ->name('page_index');
 
 // 認証が必要なページ
 Route::group(['prefix' => 'post', 'middleware' => 'auth'], function () {
