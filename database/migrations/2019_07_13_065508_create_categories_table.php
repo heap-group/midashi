@@ -19,13 +19,13 @@ class CreateCategoriesTable extends Migration
             // カテゴリー名
             $table->string('category_name');
             // 投稿ユーザー
-            $table->integer('post_create_user')
-            ->unsigned();
+            $table->integer('category_create_user')
+                ->unsigned();
             // 外部キー指定
             $table->foreign('post_create_user')
-            ->references('id')
-            ->on('users')
-            ->onDelete('cascade');
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
