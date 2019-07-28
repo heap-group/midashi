@@ -3,6 +3,7 @@
 namespace MIDASHI\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\App;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (\MIDASHI::environment('production')) {
+        if (App::environment('production')) {
             \URL::forceScheme('https');
         }
     }
