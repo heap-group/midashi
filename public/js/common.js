@@ -20,6 +20,5 @@ $(function() {
 });
 
 $(function() {
-    $("code").wrap("<pre></pre>");
     hljs.initHighlightingOnLoad();
 });

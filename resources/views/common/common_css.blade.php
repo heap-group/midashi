@@ -9,5 +9,5 @@
 <!-- Argon CSS -->
 <link type="text/css" href="{{ asset('./assets/css/argon.css?v=1.0.0') }}" rel="stylesheet">
 <link href="{{ asset('css/common.css') }}" rel="stylesheet">
-<link href="{{ asset('css/ckeditor.css') }}" rel="stylesheet">
 <link href="{{ asset('css/rainbow.css') }}" rel="stylesheet">
+@gitdown

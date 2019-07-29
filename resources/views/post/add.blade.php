@@ -61,9 +61,10 @@
                                 <a href="#" class="add_new_category d-block">登録済みのカテゴリーから選択する</a>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="">
-                                <textarea id="editor" class="form-control" name="post_text" value="{{ old('post_text') }}"></textarea>
+                        <div class="form-group mb-4">
+                            <label>本文</label>
+                            <div class="input-group input-group-alternative">
+                                <textarea class="form-control" name="post_text" style="height: 30em;">{{ old('post_text') }}</textarea>
                             </div>
                         </div>
                         <div class="text-left">

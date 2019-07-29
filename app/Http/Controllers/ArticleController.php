@@ -31,9 +31,6 @@ class ArticleController extends Controller
     {
 
         $article = Article::find($id);
-        //$categories = Category::find($request->id);
-        //dd($article);
-        //return view('article.article_detail', ['articles' => $article, 'categories' => $categories]);
         return view('article.article_detail', ['article' => $article]);
     }
     //
@@ -49,8 +46,8 @@ class ArticleController extends Controller
 
         $txt = '';
         foreach ($postInfo as $post) {
-            $txt .= '<h2>' . $post->post_title . '</h2>';
-            $txt .= $post->post_text;
+            $txt .= '## ' . $post->post_title . "\r\n";
+            $txt .= $post->post_text . "\r\n";
         }
 
         Article::create([
@@ -72,7 +69,7 @@ class ArticleController extends Controller
             'Content-Disposition' => 'attachment; filename="' . $filename . '"'
         ];
 
-        $exportData = '<h1>' .  $filename . '</h1>' . $article->article_text;
+        $exportData = $filename . "\r\n" . $article->article_text;
         return Response::make($exportData, 200, $headers);
     }
 

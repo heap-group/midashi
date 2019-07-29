@@ -70,7 +70,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                {!! $item->article_text !!}
+                                                {!! GitDown::parseAndCache($item->article_text) !!}
                                             </div>
                                             <div class="modal-footer">
                                                 <a href="{{ route('post_edit', ['id' => $item->id]) }}" class="btn btn-primary">編集</a>

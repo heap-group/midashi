@@ -87,13 +87,13 @@
                         <div class="col-md-12">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="modal-title-default">{{ $item->post_title }}</h5>
+                                    <h2 class="modal-title" id="modal-title-default">{{ $item->post_title }}</h2>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    {!! $item->post_text !!}
+                                    {!! GitDown::parseAndCache($item->post_text) !!}
                                 </div>
                                 <div class="modal-footer">
                                     <a href="{{ route('post_edit', ['id' => $item->id]) }}" class="btn btn-primary">編集</a>

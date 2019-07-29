@@ -38,8 +38,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="">
-                                <textarea id="editor" class="form-control" name="post_text">{{ $form->post_text }}</textarea>
+                            <div class="input-group input-group-alternative">
+                                <textarea class="form-control" name="post_text" style="height: 30em;">{{ $form->post_text }}</textarea>
                             </div>
                         </div>
                         <div class="text-left">
