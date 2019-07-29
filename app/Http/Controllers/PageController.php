@@ -11,6 +11,6 @@ class PageController extends Controller
      */
     public function index()
     {
-        return redirect('/');
+        return view('public.index');
     }
 }
