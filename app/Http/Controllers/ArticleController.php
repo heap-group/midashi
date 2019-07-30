@@ -62,10 +62,10 @@ class ArticleController extends Controller
     public function export(Request $request)
     {
         $article = Article::find($request->article_id);
-        $filename = $article->article_title . '.txt';
+        $filename = $article->article_title . '.md';
 
         $headers = [
-            'Content-Type' => 'text/plain',
+            'Content-Type' => 'text/md',
             'Content-Disposition' => 'attachment; filename="' . $filename . '"'
         ];
 
