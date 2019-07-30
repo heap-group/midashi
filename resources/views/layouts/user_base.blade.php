@@ -6,6 +6,10 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="description" content="@yield('description')">
         <title>@yield('title')</title>
+        <script src="{{ asset('js/lib/highlight.pack.js') }}"></script>
+        <script>
+        hljs.initHighlightingOnLoad();
+        </script>
         @include('common.common_css')
     </head>
 
