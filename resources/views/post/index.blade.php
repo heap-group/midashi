@@ -7,11 +7,13 @@
     {{ Breadcrumbs::render(Route::currentRouteName()) }}
     <div class="">
         <div class="pt-1">
+            @if(!empty($items[0]))
             <span class="h6 text-white">作成対象件数</span>
             <p id="merge_cnt" class="h1 text-white d-inline-block align-middle m-1">0</p>
             <button type="button" class="btn btn-sm btn-secondary d-inline-block align-middle" data-toggle="modal" data-target="#exampleModal">
                 記事作成
             </button>
+            @endif
         </div>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -97,7 +99,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <a href="{{ route('post_edit', ['id' => $item->id]) }}" class="btn btn-primary">編集</a>
-                                    <a href="#" class="remove btn btn-danger" data-remove-id="{{ $item->id }}" data-toggle="modal" data-target="#modal-remove-post">
+                                    <a href="#" class="remove btn btn-danger" data-remove-id="{{ $item->id }}" data-remove-category-id="{{ $item->category['id'] }}" data-toggle="modal" data-target="#modal-remove-post">
                                         削除
                                     </a>
                                     <a href="" class="btn btn-link  ml-auto" data-dismiss="modal">キャンセル</a>
