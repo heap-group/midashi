@@ -159,7 +159,18 @@ class PostController extends Controller
      */
     public function remove(Request $request)
     {
+        $user = Auth::user();
+
         Post::find($request->id)->delete();
+
+        $categoryCount = Post::where('category_id', $request->category_id)
+            ->where('post_create_user', $user->id)
+            ->get();
+
+        if ($categoryCount->isEmpty()) {
+            Category::find($request->category_id)->delete();
+        }
+
         return redirect('/post');
     }
 

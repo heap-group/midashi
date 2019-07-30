@@ -32,10 +32,16 @@ $(function() {
 
     $(".remove").click(function() {
         var removeId = $(this).data("remove-id");
+        var categoryId = $(this).data("remove-category-id");
         var titleText = $('a[data-title-id="' + removeId + '"]').text();
         $("#remove_title").text(titleText);
         $("#post_remove_form").prepend(
-            '<input type="hidden" name="id" value="' + removeId + '">'
+            '<input type="hidden" name="id" value="' +
+                removeId +
+                '">' +
+                '<input type="hidden" name="category_id" value="' +
+                categoryId +
+                '">'
         );
     });
 });
