@@ -18,7 +18,3 @@ $(function() {
         }
     });
 });
-
-$(function() {
-    hljs.initHighlightingOnLoad();
-});
