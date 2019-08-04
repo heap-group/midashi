@@ -22,7 +22,7 @@ class PostController extends Controller
         //ログインユーザーの投稿を取得
         $items = Post::where('post_create_user', $user->id)
             ->orderBy('updated_at', 'desc')
-            ->paginate(9);
+            ->paginate(12);
 
         // $categories = Category::where('category_create_user', $user->id)
         //     ->orderBy('created_at', 'asc')
@@ -48,7 +48,7 @@ class PostController extends Controller
         $items = Post::where('post_create_user', $user->id)
             ->where('category_id', $request->id)
             ->orderBy('updated_at', 'desc')
-            ->paginate(9);
+            ->paginate(12);
         //dd($items);
         return view('post.find_reslut', ['items' => $items]);
     }
@@ -173,23 +173,4 @@ class PostController extends Controller
 
         return redirect('/post');
     }
-
-    // /**
-    //  * カテゴリー登録
-    //  */
-    // private function insertCategory($categoryName) {
-
-    // }
-
-    // /**
-    //  * カテゴリー存在チェック
-    //  */
-    // private function isCategory($categoryId) {
-    //     if(!is_null($categoryData)) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
-
 }
