@@ -40,8 +40,20 @@ class ArticleController extends Controller
         $user = Auth::user();
         $mergeList = $request->mergeList;
 
+        $updateSortNo = [];
+        while (current($mergeList)) {
+            $updateSortNo[] = key($mergeList);
+            next($mergeList);
+        }
+
+        for ($i = 0; $i < count($updateSortNo); $i++) {
+            Post::where('id', $mergeList[$i])
+                ->update(['sort' => intval($updateSortNo[$i])]);
+        }
+
         $postInfo = Post::whereIn('id', $mergeList)
             ->where('post_create_user', $user->id)
+            ->orderBy('sort')
             ->get();
 
         $txt = '';

@@ -38,7 +38,7 @@
                             <hr class="my-3">
                             <div id="merge_list">
                                 <p>記事作成対象見出し</p>
-                                <ul>
+                                <ul id="sort_no" class="list-group">
                                 </ul>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
             </div>
         </div>
     </div>
-    <div class="d-block">
+    <div class="d-block col-md-12">
         {{ $items->links() }}
     </div>
 @endsection

@@ -7,20 +7,18 @@ $(function() {
             var prop = $(this).prop("checked");
 
             if (prop) {
-                $("#merge_action").prepend(
-                    '<input type="hidden" name="mergeList[]" value="' +
-                        $(this).val() +
-                        '">'
-                );
-
                 var articleTitle = $(
                     'a[data-title-id="' + $(this).val() + '"]'
                 ).text();
                 $("#merge_list ul").append(
-                    '<li data-title-id="' +
+                    '<li class="bg-white p-3 m-1 list-group-item border-0 shadow-sm rounded" data-title-id="' +
                         $(this).val() +
                         '">' +
+                        '<i class="fas fa-arrows-alt mr-3 text-primary"></i>' +
                         articleTitle +
+                        '<input type="hidden" name="mergeList[]" value="' +
+                        $(this).val() +
+                        '">' +
                         "</li>"
                 );
             } else {
