@@ -2,17 +2,17 @@
     overflow: scroll;
 }
 
-/* html {
-    min-height: 100%;
-    position: relative;
+/*スクロールバーの幅*/
+::-webkit-scrollbar {
+    display: none;
 }
-
-body {
-    margin-bottom: 15em;
-}
-
-footer {
-    bottom: 0;
-    height: 5em;
-    position: absolute;
+/*スクロールバーのレール*/
+/* ::-webkit-scrollbar-track {
+    border-radius: 30px;
+    background: #eee;
+} */
+/*スクロールバーのつまみ*/
+/* ::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background: #81d4fa;
 } */
