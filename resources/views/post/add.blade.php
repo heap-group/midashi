@@ -45,16 +45,7 @@
                     <div class="modal-body p-0">
                         <div class="card bg-secondary shadow border-0">
                             <div class="card-body px-lg-5 py-lg-5">
-                                <div class="text-left text-muted mb-3">
-                                    @if($errors->any())
-                                    <div class="error">
-                                        @foreach($errors->all() as $message)
-                                        <span class="text-danger d-block"><strong>エラー:</strong> {{ $message }}</span>
-                                        @endforeach
-                                    </div>
-                                    @endif
-                                </div>
-                                <div class="form-group mb-1">
+                                <div class="form-group mt-3 mb-1">
                                     <div class="mb-4">
                                         <button type="submit" class="btn btn-primary btn-lg btn-block">作成</button>
                                     </div>
@@ -62,7 +53,11 @@
                                 <div class="form-group mb-1" id="category_area">
                                     @foreach ($categories as $category)
                                         <div class="custom-control custom-radio mb-3">
-                                            <input name="category_name" class="custom-control-input" id="customRadio{{ $loop->index }}" type="radio" value="{{ $category->category_name }}">
+                                            @if ($loop->index == 0)
+                                                <input name="category_name" class="custom-control-input" id="customRadio{{ $loop->index }}" type="radio" value="{{ $category->category_name }}" checked>
+                                            @else
+                                                <input name="category_name" class="custom-control-input" id="customRadio{{ $loop->index }}" type="radio" value="{{ $category->category_name }}">
+                                            @endif
                                             <label class="custom-control-label" for="customRadio{{ $loop->index }}">{{ $category->category_name }}</label>
                                         </div>
                                     @endforeach
@@ -73,7 +68,7 @@
                                 <div class="form-group mb-1">
                                     <div id="add_category_text" class="d-none">
                                         <div class="input-group input-group-alternative">
-                                            <input name="category_name" class="form-control" placeholder="新規カテゴリー名" type="text">
+                                            <input class="form-control" placeholder="新規カテゴリー名" type="text">
                                         </div>
                                         <div class="mt-1">
                                             <a href="#" class="add_category_btn">キャンセル</a>
