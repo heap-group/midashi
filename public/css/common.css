@@ -23,7 +23,46 @@ textarea {
 }
 
 .viewer blockquote {
-    border-left: 2px solid #888;
+    position: relative;
+    padding: 5px 12px;
+    box-sizing: border-box;
+    font-style: italic;
+    color: #464646;
+    border-left: solid 40px #c4c4c4;
+    background: #f3f3f3;
+    border-radius: 4px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.19); */
+}
+
+.viewer blockquote:before {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: -32px;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-family: "Font Awesome 5 Free";
+    content: "\f10d";
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 900;
+}
+
+.viewer blockquote p {
+    position: relative;
+    padding: 0;
+    margin: 10px 0;
+    z-index: 3;
+    line-height: 1.7;
+}
+
+.viewer blockquote cite {
+    display: block;
+    text-align: right;
+    color: #888888;
+    font-size: 0.9em;
 }
 
 .viewer strong {
@@ -69,6 +108,7 @@ textarea {
 
 .viewer table {
     width: 100%;
+    margin-bottom: 10px;
 }
 
 .viewer th,
