@@ -11,7 +11,7 @@
             <span class="h6 text-white">作成対象件数</span>
             <p id="merge_cnt" class="h1 text-white d-inline-block align-middle m-1">0</p>
             <button type="button" class="btn btn-sm btn-secondary d-inline-block align-middle" data-toggle="modal" data-target="#exampleModal">
-                記事作成
+                まとめ作成
             </button>
             @endif
         </div>
@@ -20,7 +20,7 @@
                 <div class="modal-content bg-secondary">
                     <form id="merge_action" action="{{ route('post_marge') }}" method="POST">
                         <div class="modal-header">
-                            <h3>記事作成</h3>
+                            <h3>まとめ作成</h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -37,7 +37,7 @@
                             </div>
                             <hr class="my-3">
                             <div id="merge_list">
-                                <p>記事作成対象見出し</p>
+                                <p>まとめ作成対象見出し</p>
                                 <ul id="sort_no" class="list-group">
                                 </ul>
                             </div>
@@ -45,7 +45,7 @@
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-primary">
                                 <i class="far fa-paper-plane mr-2"></i>
-                                記事作成
+                                まとめ作成
                             </button>
                             <button type="button" class="btn btn-link ml-auto" data-dismiss="modal">キャンセル</button>
                         </div>
@@ -94,7 +94,7 @@
                                         <span aria-hidden="true">×</span>
                                     </button>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body viewer">
                                     {!! GitDown::parseAndCache($item->post_text) !!}
                                 </div>
                                 <div class="modal-footer">
