@@ -31,8 +31,36 @@
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
+                                    {{-- TODO: コンポーネント化する --}}
+                                    <div class="mb-3">
+                                        <button type="button" class="post_parts btn btn-sm btn-primary d-inline-block mt-2" data-code="h3">
+                                            <i class="fas fa-heading mr-2"></i>h3
+                                        </button>
+                                        <button type="button" class="post_parts btn btn-sm btn-primary d-inline-block mt-2" data-code="h4">
+                                            <i class="fas fa-heading mr-2"></i>h4
+                                        </button>
+                                        <button type="button" class="post_parts btn btn-sm btn-primary d-inline-block mt-2" data-code="bold">
+                                            <i class="fas fa-bold mr-2"></i>bold
+                                        </button>
+                                        <button type="button" class="post_parts btn btn-sm btn-primary d-inline-block mt-2" data-code="link">
+                                            <i class="fas fa-link mr-2"></i>link
+                                        </button>
+                                        <button type="button" class="post_parts btn btn-sm btn-primary d-inline-block mt-2" data-code="li">
+                                            <i class="fas fa-list mr-2"></i>list
+                                        </button>
+                                        <button type="button" class="post_parts btn btn-sm btn-primary d-inline-block mt-2" data-code="quote">
+                                            <i class="fas fa-quote-left mr-2"></i>quote
+                                        </button>
+
+                                        <button type="button" class="post_parts btn btn-sm btn-primary d-inline-block mt-2" data-code="table">
+                                            <i class="fas fa-table mr-2"></i>table
+                                        </button>
+                                        <button type="button" class="post_parts btn btn-sm btn-primary d-inline-block mt-2" data-code="code">
+                                            <i class="fas fa-code mr-2"></i>code
+                                        </button>
+                                    </div>
                                     <div class="input-group input-group-alternative">
-                                        <textarea class="form-control" name="post_text" style="height: 30em;">{{ old('post_text') }}</textarea>
+                                        <textarea id="post_textarea" class="form-control" name="post_text" style="height: 30em;">{{ old('post_text') }}</textarea>
                                     </div>
                                 </div>
                             </div>
